@@ -1,0 +1,141 @@
+body {
+  user-select: none;
+  background-size: cover;
+  cursor: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  margin: 0; 
+  position: relative;
+} 
+  
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем элементы внутри контейнера */
+  margin-top: 100px;
+}
+
+.center-image {
+  user-select: none;
+  max-width: 150px; 
+  margin-top: -250px;
+  opacity: 0; 
+  animation: image-appearance 3s ease-in-out forwards; 
+  pointer-events: none;
+}
+
+@keyframes image-appearance {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Начальное положение выше */
+  }
+  100% {
+    opacity: 65%; /* Конечная прозрачность */
+    transform: translateY(0); /* Конечное положение */
+  }
+}
+
+.image-text{
+  color: white;
+  font-family: 'PresentScript';
+  font-size: 30px;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  opacity: 0;
+  /* Задержка анимации текста, чтобы он появился после изображения */
+  animation: text-appearance 1s ease-in-out forwards; 
+  animation-delay: 3s; /* Задержка равна длительности анимации изображения */
+    /* Позиционируем текст под изображением */
+  margin-top: 10px;
+  max-width: 500px;
+}
+
+.mortid-text {
+  color: white;
+  font-family: 'PresentScript';
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  opacity: 0;
+  /* Задержка анимации текста, чтобы он появился после изображения */
+  animation: text-appearance 1s ease-in-out forwards; 
+  animation-delay: 3s; /* Задержка равна длительности анимации изображения */
+    /* Позиционируем текст под изображением */
+  margin-top: 10px;
+}
+
+@keyframes text-appearance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /*  Начальное положение ниже */
+  }
+  100% {
+    opacity: 80%; /* Конечная прозрачность текста */
+    transform: translateY(0);  /*  Конечное положение */
+  }
+}
+
+.bgvideo2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -9999;
+}
+
+
+@keyframes typing{
+  from{
+    width: 0;
+  }
+  to{
+    width:100%;
+  }
+}
+
+@keyframes blink{
+  from,
+  to{
+    border-color: transparent;
+  }
+  50%{
+    border-color: rgb(116, 116, 116);
+  }
+}
+
+
+#neon-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgb(255, 61, 61);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgb(255, 61, 61), 0 0 20px rgb(255, 61, 61), 0 0 30px rgb(255, 61, 61), 0 0 40px rgb(255, 61, 61);
+  transition: transform 0.1s, box-shadow 0.1s;
+  transform: translate(-50%, -50%);
+}
+
+.back-button {
+  position: fixed; /* Фиксированное положение в левом верхнем углу */
+  top: 20px;
+  left: 20px;
+  color: white; /* Цвет текста ссылки */
+  font-size: 30px; /* Размер шрифта */
+  text-decoration: none; /* Убираем подчеркивание */
+  z-index: 1000; /* Убеждаемся, что кнопка выше других элементов */
+  text-shadow: 0 0 5px black; /* Добавляем тень к тексту */
+  padding: 10px; /* Небольшое заполнение для удобства клика */
+  border-radius: 5px; /* Скругляем углы */
+  cursor:none;
+    transition: all 0.3s ease; /* Плавный переход при наведении */
+}
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Добавляем фон при наведении */
+}

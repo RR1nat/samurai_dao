@@ -1,0 +1,132 @@
+body {
+  background-size: cover;
+  cursor: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  margin: 0; 
+  position: relative;
+  overflow-x: hidden; /* Это предотвратит горизонтальную полосу прокрутки, если контент шире экрана */
+
+} 
+  
+.bgvideo3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -9999;
+  filter: brightness(0.25);
+}
+
+  .back-button {
+    position: fixed; /* Фиксированное положение в левом верхнем углу */
+    top: 20px;
+    left: 20px;
+    color: white; /* Цвет текста ссылки */
+    font-size: 30px; /* Размер шрифта */
+    text-decoration: none; /* Убираем подчеркивание */
+    z-index: 1000; /* Убеждаемся, что кнопка выше других элементов */
+    text-shadow: 0 0 5px black; /* Добавляем тень к тексту */
+    padding: 10px; /* Небольшое заполнение для удобства клика */
+    border-radius: 5px; /* Скругляем углы */
+    cursor: none;
+      transition: all 0.3s ease; /* Плавный переход при наведении */
+  }
+  .back-button:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* Добавляем фон при наведении */
+  }
+
+  #neon-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 61, 61);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgb(255, 61, 61), 0 0 20px rgb(255, 61, 61), 0 0 30px rgb(255, 61, 61), 0 0 40px rgb(255, 61, 61);
+    transition: transform 0.1s, box-shadow 0.1s;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .content-wrapper {  /* Новый div для обтекания контента */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Выравнивание текста по центру */
+    z-index: 1; /* Помещаем контент поверх видео */
+    margin-top: -120px;
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(10px);
+    animation: fadeInUp 2s ease-in-out forwards;
+  }
+  
+  .main-title {
+    font-family: 'PresentScript';
+    font-size: 3.5em;
+    color:white;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgb(255, 61, 61);
+    user-select: none;
+    animation-delay: 0.2s;
+  }
+  
+  .main-image {
+    max-width: 30%; /* Ограничиваем ширину картинки */
+    height: auto;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgb(255, 61, 61);
+    border-radius: 10px;
+    user-select: none;
+    animation-delay: 0.4s;
+  }
+  
+  p {
+    font-family: 'PresentScript';
+    font-size: 26px;
+    color: white;
+    width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-shadow: 0 0 5px black;
+    user-select: none;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.telegram-link {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-family: 'PresentScript';
+  color: white;
+  text-decoration: none;
+  background: linear-gradient(45deg, #ff3d3d, #ff8a3d); /* Градиент как у курсора */
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(255, 61, 61, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  user-select: none;
+  animation-delay: 1.2s;
+  cursor: none;
+}
+
+.telegram-link:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 0 20px rgba(255, 61, 61, 0.8); 
+}

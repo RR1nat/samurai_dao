@@ -1,0 +1,145 @@
+body {
+  background-size: cover;
+  cursor: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  margin: 0; 
+  position: relative;
+  color: white;
+} 
+
+  
+.bgvideo4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.2);
+
+}
+
+  .back-button {
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    color: white; 
+    font-size: 30px; 
+    text-decoration: none;
+    z-index: 1000; 
+    text-shadow: 0 0 5px black; 
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: none;
+      transition: all 0.3s ease; 
+  }
+  .back-button:hover {
+      background-color: rgba(255, 255, 255, 0.2); 
+  }
+
+  #neon-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(255, 61, 61);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgb(255, 61, 61), 0 0 20px rgb(255, 61, 61), 0 0 30px rgb(255, 61, 61), 0 0 40px rgb(255, 61, 61);
+    transition: transform 0.1s, box-shadow 0.1s;
+    transform: translate(-50%, -50%);
+  }
+
+  .header-container {
+    font-size: 28px;
+    color: white;
+    font-family: 'PresentScript';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; 
+    margin-top: -200px;
+    margin-bottom: 20px; 
+    z-index: 1000;
+    position: relative; 
+    user-select: none;
+    opacity: 0;
+    animation: text-appearance 1s ease-in-out forwards; 
+    animation-delay: 0.5s;
+  }
+  
+  .left-block, .right-block {
+    text-align: left;
+  }
+
+  .left-header, .right-header {
+    text-shadow: 0 0 5px black; /* Тень для лучшей читаемости */
+    margin-bottom: 50px; /* Отступ между заголовком и описанием */
+
+  }
+
+  .left-description, .right-description {
+    text-shadow: 0 0 5px black;
+  }
+
+  .right-description{
+    font-size: 25px;
+  }
+
+
+  .marquee-infinite{
+    margin: 30px auto;
+    border: 1px solid #ffffff;
+    max-width: 100%;
+    overflow: hidden;
+    position: fixed; /* Фиксируем внизу */
+    padding: 5px; /* Отступы */
+    bottom: 0;
+    white-space: nowrap; /* Это важно для правильной работы анимации */
+    width: 100%; /* Занимаем всю ширину */
+  
+  }
+
+  .marquee-infinite div{
+    display: inline-block;
+    animation: marquee-infinite 25s linear infinite;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .marquee-infinite span{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-shrink: 0;
+  }
+
+  .marquee-infinite img{
+    width: 100%;
+  }
+
+  .marquee-infinite:hover div{
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-infinite {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(-210%);}
+  }
+
+  @keyframes text-appearance {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /*  Начальное положение ниже */
+    }
+    100% {
+      opacity: 80%; /* Конечная прозрачность текста */
+      transform: translateY(0);  /*  Конечное положение */
+    }
+  }
